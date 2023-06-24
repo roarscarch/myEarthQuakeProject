@@ -1,0 +1,102 @@
+<% layout('layout/no container.ejs') %>
+<style>
+  body {
+    background-image: url('/img/register.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .main-content {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 50px;
+  }
+
+  .signin-name {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .signin-name h2 {
+    color: #0a4fbf;
+  }
+
+  .validated-form {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .validated-form .form-label {
+    font-weight: bold;
+    color: #343A40;
+  }
+
+  .validated-form .form-control {
+    padding: 8px 12px;
+    border-radius: 4px;
+    border: 1px solid #ced4da;
+    background-color: #fff;
+    color: #343A40;
+    width: 100%;
+  }
+
+  .validated-form .btn {
+    margin-top: 10px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+  }
+
+  .Sign-up {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .Sign-up a {
+    color: #0a4fbf;
+  }
+</style>
+
+<main>
+  <div class="main-content container">
+    <div class="logo">
+      <a class="navbar-link" href="/campgrounds" style="color: black;"><i class="fas fa-fire-alt" style="color: #e85d04;"></i> YelpCamp</a>
+    </div>
+    <div class="signin-name">
+      <h2>Sign Up</h2>
+    </div>
+    <form action="/register" method="POST" class="validated-form" novalidate>
+      <div class="mb-3">
+        <label class="form-label" for="username">Username</label>
+        <input class="form-control" type="text" name="user[username]" id="username" placeholder="Username" required>
+        <div class="valid-feedback">
+          looks good!
+        </div>
+      </div>
+      <div class="mb-3">
+        <label class="form-label" for="email">Email</label>
+        <input class="form-control" type="email" name="user[email]" id="email" placeholder="Email" required>
+        <div class="valid-feedback">
+          looks good!
+        </div>
+      </div>
+      <div class="mb-3">
+        <label class="form-label" for="password">Password</label>
+        <input class="form-control" type="password" name="user[password]" id="password" placeholder="Password" required>
+        <div class="valid-feedback">
+          looks good!
+        </div>
+      </div>
+      <div class="mb-3">
+        <button class="btn btn-dark" type="submit">Sign up</button>
+      </div>
+    </form>
+    <div class="Sign-up mt-2">
+      <p>
+        Already have an account? <a href="/login">Sign in here</a>
+      </p>
+    </div>
+  </div>
+</main>

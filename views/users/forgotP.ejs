@@ -1,0 +1,64 @@
+<% layout('layout/boilerplate.ejs') %>
+<style>
+    .form_holder {
+        background-color: #f8f9fa;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
+    }
+
+    .form_holder legend {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        color: #0a4fbf;
+    }
+
+    .form_holder label {
+        font-size: 16px;
+        font-weight: bold;
+        color: #343A40;
+    }
+
+    .form_holder input[type="email"] {
+        font-size: 14px;
+        padding: 8px 12px;
+        border-radius: 4px;
+        border: 1px solid #ced4da;
+        background-color: #fff;
+        color: #343A40;
+    }
+
+    .form_holder input[type="email"]::placeholder {
+        color: #A9A9A9;
+    }
+
+    .form_holder input[type="submit"] {
+        font-size: 16px;
+        padding: 10px 20px;
+        border-radius: 4px;
+        background-color: #0a4fbf;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+    }
+</style>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <form class="form_holder" action="/forgotP" method="POST">
+                <fieldset class="border p-4">
+                    <legend class="mb-4">Forgot Password</legend>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" autofocus class="form-control form-control-sm mb-3" placeholder="Enter your email">
+                    </div>
+                    <div class="form-group mb-4">
+                        <input type="submit" class="btn btn-primary" value="Reset Password">
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,27 @@
+<!-- Nav Bar -->
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/"><i class="fas fa-fire-alt" style="color: #e85d04;"></i>  Anurag</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link" href="/campgrounds">Campgrounds</a>
+        <a class="nav-link" href="/campgrounds/new">New Campground</a>
+        <a class="nav-link" href="/c">Categories</a>
+      </div>
+      <div class="navbar-nav ms-auto">
+        <a class="nav-link" href="/about">About</a>
+        <% if(!currentUser) { %>
+          <a class="nav-link" href="/login">Sign In</a>
+          <a class="nav-link active btn btn-primary" href="/register" ">Join Free</a>
+          <% } else { %>
+            <a href="#" class="nav-link active">Hi, <%= currentUser.username %> </a>
+            <a class="nav-link active btn btn-primary" href="/logout">Logout</a>
+            <% }%>
+      </div>
+    </div>
+  </div>
+</nav>
