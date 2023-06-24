@@ -61,6 +61,14 @@ const categories = [
             filename: 'Category/Glamping_vxgov2',
         },
         description: 'Glamping is also known as glamorous camping and it involves camping with the luxuries of a home or hotel. You are going to find a wide range of glamping accommodations that are available all over the world from staying in a yurt on a mountaintop to enjoying panoramic sceneries in an eco-lodge. Glamping is more than a nice tent as you can find varieties of options that range from cabins, villas, tipis, lodges, and treehouses.'
+    },
+    {
+        title: 'gal gadot',
+        image: {
+            url: 'https://res.cloudinary.com/dhbiouaym/image/upload/v1632977957/YelpCamp/Category/Glamping_vxgov2.jpg',
+            filename: 'Category/Glamping_vxgov2',
+        },
+        description: 'Glamping is also known as glamorous camping and it involves camping with the luxuries of a home or hotel. You are going to find a wide range of glamping accommodations that are available all over the world from staying in a yurt on a mountaintop to enjoying panoramic sceneries in an eco-lodge. Glamping is more than a nice tent as you can find varieties of options that range from cabins, villas, tipis, lodges, and treehouses.'
     }
 ]
 

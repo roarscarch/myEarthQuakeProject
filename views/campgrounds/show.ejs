@@ -42,8 +42,10 @@
                        Location: <%= campground.location %>
                     </li>
                     <li class="list-group-item text-muted">
-                        Email: <%= campground.mail || 'abc@gmail.com' %>
+                        Email: <a href="mailto:<%= campground.mail || 'abc@gmail.com' %>" style="text-decoration: none; color: rgb(60, 119, 231);"><%= campground.mail || 'abc@gmail.com' %></a>
                     </li>
+                    
+                    
                     <li class="list-group-item">
                         Contact No: <%= campground.contact || '1234567890' %>
                     </li>
