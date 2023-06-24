@@ -54,66 +54,56 @@ module.exports.renderForgotP = (req, res) => {
   res.render('users/forgotP');
 };
 
-module.exports.forgotPassword = (req, res, next) => {
-  async.waterfall([
-    (done) => {
-      crypto.randomBytes(20, (err, buf) => {
-        const token = buf.toString('hex');
-        done(err, token);
-      });
-    },
-    (token, done) => {
-      User.findOne({ email: req.body.email }, (err, user) => {
-        if (!user) {
-          req.flash('error', 'No account with that email address exists.');
-          return res.redirect('/forgotP');
-        }
+module.exports.forgotPassword = async (req, res, next) => {
+  try {
+    const token = await crypto.randomBytes(20).toString('hex');
+    const user = await User.findOne({ email: req.body.email });
 
-        user.resetPasswordToken = token;
-        user.resetPasswordExpires = Date.now() + 3600000; // 1 hour
+    if (!user) {
+      req.flash('error', 'No account with that email address exists.');
+      return res.redirect('/forgotP');
+    }
 
-        user.save((err) => {
-          done(err, token, user);
-        });
-      });
-    },
-    (token, user, done) => {
-      const smtpTransport = nodemailer.createTransport({
-        service: 'Gmail',
-        auth: {
-          user: process.env.MAIL_USER,
-          pass: process.env.MAIL_PASS,
-        },
-      });
-      const mailOptions = {
-        to: user.email,
-        from: 'Yelp Camp',
-        subject: 'Password Reset',
-        text:
-          'You are receiving this because you (or someone else) have requested the reset of the password for your account.\n\n' +
-          'Please click on the following link, or paste this into your browser to complete the process:\n\n' +
-          'http://' +
-          req.headers.host +
-          '/reset/' +
-          token +
-          '\n\n' +
-          'If you did not request this, please ignore this email and your password will remain unchanged.\n',
-      };
-      smtpTransport.sendMail(mailOptions, (err) => {
-        console.log('mail sent');
-        req.flash(
-          'success',
-          'An email has been sent to ' +
-            user.email +
-            ' with further instructions.'
-        );
-        done(err, 'done');
-      });
-    },
-  ], (err) => {
-    if (err) return next(err);
+    user.resetPasswordToken = token;
+    user.resetPasswordExpires = Date.now() + 3600000; // 1 hour
+
+    await user.save();
+
+    const smtpTransport = nodemailer.createTransport({
+      service: 'Gmail',
+      auth: {
+        user: process.env.MAIL_USER,
+        pass: process.env.MAIL_PASS,
+      },
+    });
+
+    const mailOptions = {
+      to: user.email,
+      from: 'Yelp Camp',
+      subject: 'Password Reset',
+      text:
+        'You are receiving this because you (or someone else) have requested the reset of the password for your account.\n\n' +
+        'Please click on the following link, or paste this into your browser to complete the process:\n\n' +
+        'http://' +
+        req.headers.host +
+        '/reset/' +
+        token +
+        '\n\n' +
+        'If you did not request this, please ignore this email and your password will remain unchanged.\n',
+    };
+
+    await smtpTransport.sendMail(mailOptions);
+
+    req.flash(
+      'success',
+      'An email has been sent to ' +
+        user.email +
+        ' with further instructions.'
+    );
     res.redirect('/forgotP');
-  });
+  } catch (error) {
+    next(error);
+  }
 };
 
 module.exports.renderReset = (req, res) => {
