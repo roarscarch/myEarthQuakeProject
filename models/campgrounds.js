@@ -33,6 +33,8 @@ const CampgroundSchema = Schema({
         ref: 'Category',
     },
     location: String,
+    mail: String,
+    contact: Number,
     geometry: {
         type: {
             type: String,

@@ -37,6 +37,8 @@ module.exports.campgroundSchema = Joi.object({
         title: Joi.string().required().escapeHTML(),
         price: Joi.number().required().min(0),
         category: Joi.string().required(),
+        mail: Joi.string().required(),
+        contact: Joi.number().required(),
         location: Joi.string().required().escapeHTML(),
         description: Joi.string().required().escapeHTML(),
     }).required(),

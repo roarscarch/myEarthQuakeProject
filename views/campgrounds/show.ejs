@@ -36,14 +36,22 @@
                 </div>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">
-                        Submitted by: <%= campground.author.username %>
+                        Submitted by: <%= campground.author ? campground.author.username : 'Unknown' %>
                     </li>
                     <li class="list-group-item text-muted">
-                        <%= campground.location %>
+                       Location: <%= campground.location %>
                     </li>
+                    <li class="list-group-item text-muted">
+                        Email: <%= campground.mail || 'abc@gmail.com' %>
+                    </li>
+                    <li class="list-group-item">
+                        Contact No: <%= campground.contact || '1234567890' %>
+                    </li>
+                    
                     <li class="list-group-item">$<%= campground.price %>/night</li>
                 </ul>
-                <% if (currentUser && campground.author.equals(currentUser._id)) { %>
+                <% if (currentUser && campground.author && campground.author.equals(currentUser._id)) { %>
+                    >
                     <div class="card-body">
                         <a class="card-link btn btn-dark" href="/campgrounds/<%= campground._id %>/edit">Edit
                             Campground</a>
