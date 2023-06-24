@@ -35,6 +35,35 @@
                     </div>
                 </div>
 
+            
+                <div class="mb-3">
+                    <label class="form-label" for="mail">Email</label>
+                    <div class="input-group">
+                        
+                        <input type="text" id="mail" class="form-control" placeholder="0.00" aria-label="mail"
+                            aria-describedby="mail-label" name="campground[mail]" value="<%= campground.mail %>"
+                            required>
+                        <div class="valid-feedback">
+                            looks good!
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label" for="contact">Contact No:</label>
+                    <div class="input-group">
+                        
+                        <input type="text" id="contact" class="form-control" placeholder="0.00" aria-label="contact"
+                            aria-describedby="contact-label" name="campground[contact]" value="<%= campground.contact %>"
+                            required>
+                        <div class="valid-feedback">
+                            looks good!
+                        </div>
+                    </div>
+                </div>
+
+
+
                 <div class="mb-3">
                     <label for="category" class="form-label">Update Category</label>
                     <select name="campground[category]" id="category">
@@ -51,6 +80,7 @@
                         looks good!
                     </div>
                 </div>
+               
         </div>
         <div class="col-md-6 mt-3">
             <div class="mb-3">

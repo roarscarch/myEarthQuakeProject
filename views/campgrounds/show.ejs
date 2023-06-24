@@ -35,9 +35,20 @@
                     </p>
                 </div>
                 <ul class="list-group list-group-flush">
+
+
                     <li class="list-group-item">
-                        Submitted by: <%= campground.author ? campground.author.username : 'Unknown' %>
-                    </li>
+                        Submitted by:
+                        <% if (campground.author) { %>
+                          <a href="/user/<%= campground.id %>">
+                            <%= campground.author.username %>
+                          </a>
+                        <% } else { %>
+                          Unknown
+                        <% } %>
+                      </li>
+                      
+                      
                     <li class="list-group-item text-muted">
                        Location: <%= campground.location %>
                     </li>
@@ -134,3 +145,4 @@
         const campground = <%- JSON.stringify(campground) %> 
     </script>
     <script src="/js/showPageMaps.js"></script>
+    <%=campground.id %>

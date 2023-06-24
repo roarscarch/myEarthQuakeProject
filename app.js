@@ -181,6 +181,7 @@ app.use('/campgrounds', campgroundRoutes)
 app.use('/campgrounds/:id/reviews', reviewRoutes)
 // --------------------------------------------------- AUTH routes -----------------------------------------------------
 app.use('/', userRoutes)
+// -----------------------------a('/userpp.use/:id',userRoutes);
 // ---------------------------------------------------- category routes -----------------------------------------------
 app.use('/c', categoryRoutes)
 // -------------------------------------------------------- about us -------------------------------------------------------------
@@ -194,6 +195,13 @@ app.get('/results', async(req, res) =>{
     res.render('search.ejs', {campgrounds, search_query})
 })
 
+app.get('/user/:id', async (req, res) => {
+    const { id } = req.params;
+    const campground = await Campground.findById(id).populate('author');
+    
+    res.render('campgrounds/userProfile', { campground });
+  });
+  
 
 app.all('*', (req, res, next) => {
     next(new ExpressError('Page not Found', 404))
