@@ -10,11 +10,13 @@ const categorySchema = Schema({
     title: {
         type: String,
     },
-    image: {
-        url:String,
-        filename: String,
-    }, 
-    description:String,
+    image:{
+        url: String,
+       
+    },
+    description :{
+        type: String,
+    }
 })
 
 

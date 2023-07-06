@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YelpCamp | Categories</title>
+    <title>HopeHose| Categories</title>
 
     <link rel="icon" href="/img/favicon.png" type="image/gif" sizes="16x16">
 
@@ -47,12 +47,12 @@
             <%- include('../partials/flash') %>
 
                 <header class="mb-5">
-                    <h1 class="display-5 fw-bold mb-3">Campgrounds</h1>
+                    <h1 class="display-5 fw-bold mb-3">HopeHouse</h1>
                     <p class="fs-4 ms-2">Explore the world through the beautiful different Types/Topics of <br>
-                    <a href="/campgrounds" class="text-color-secondary">Campgrounds</a>.</p>
+                    <a href="/campgrounds" class="text-color-secondary">HopeHouses</a>.</p>
                 </header>
 
-                <h2 class="mt-5 mb-3">Top Campgrounds</h2>
+                <h2 class="mt-5 mb-3">Top HopeHouses</h2>
                 <div class="row mb-5">
                     <% for( let campground of campgrounds ) { %>
                         <div class="col-md-4">
@@ -72,7 +72,7 @@
                     <% } %>
                 </div>
 
-                <h2 class="mt-5 mb-3">Different Types of Camping sites</h2>
+                <h2 class="mt-5 mb-3">Different HopeHouses we offer:</h2>
                 <div class="row">
                     <% for( let category of categories ) { %>
                     <div class="col-md-4">
@@ -81,10 +81,10 @@
                             <div class="card-body">
                                 <h5 class="card-title"><%= category.title %></h5>
                                 <p class="card-text"><%= category.description.substring(0, 110)%> ...  %> </p>
-                                <a href="/c/<%= category._id %>" class="btn btn-dark"><%= category.title %> Grounds </a>
+                                <a href="/c/<%= category._id %>" class="btn btn-dark"><%= category.title %> Homes </a>
                             </div>
                             <div class="card-footer text-muted">
-                                By YelpCamp
+                                By HopeHouse
                             </div>
                         </div>
                     </div>
