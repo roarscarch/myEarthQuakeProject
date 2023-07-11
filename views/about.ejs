@@ -16,58 +16,57 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
         integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
-        
 
     <title>HopeHouse | About</title>
 </head>
 
 <body>
-    <!-- Nav Bar -->
-<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="/"><i class="fas fa-fire-alt" style="color: #e85d04;"></i>  Anurag</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <a class="nav-link" href="/campgrounds">Campgrounds</a>
-          <a class="nav-link" href="/campgrounds/new">New Campground</a>
-          <a class="nav-link" href="/c">Categories</a>
+    <div class="about">
+        <!-- ------------------------------------ -->
+        <div class="upper">
+            <div class="logo">
+                <img src="/img/logo.gif" alt="" id="logo" />
+                <div class="image">
+                    <div class="camp">
+                        <img src="/img/tent.png" alt="" id="tent" />
+                        <img src="/img/fire.gif" alt="" id="fire" />
+                    </div>
+                </div>
+            </div>
+            <div class="info">
+                <h1>ABOUT <i class="fas fa-fire-alt" style="color: #e85d04;"></i> <span class="yelp">HopeHouse</span>
+                </h1>
+                <p>
+                    Hope House is a web application that allows you to create a hopeHouse with a short description. Once
+                    you login or signup you can begin to create your own campgrounds that includes a title, image
+                    address and short description.
+                    Welcome to our site, where dreams are rebuilt, and where the strength of the human spirit reigns supreme. Together, we can heal, rebuild, and create a future that embodies the beauty of unity and compassion.
+                </p>
+            </div>
         </div>
-        <div class="navbar-nav ms-auto">
-          <a class="nav-link" href="/about">About</a>
-          <% if(!currentUser) { %>
-            <a class="nav-link" href="/login">Sign In</a>
-            <a class="nav-link active btn btn-primary" href="/register" ">Join Free</a>
-            <% } else { %>
-              <a href="#" class="nav-link active">Hi, <%= currentUser.username %> </a>
-              <a class="nav-link active btn btn-primary" href="/logout">Logout</a>
-              <% }%>
+        <!-- ------------------------------------ -->
+        <div class="lower">
+            <div class="info">
+                <h1>ABOUT OUR <span class="yelp">TEAM</span></h1>
+                <p>
+                    Our skilled and zealous team constantly works hard to make your experience simple, smooth and delightful.
+                    We are looking forward to make your experience the best, so we would appreciate if you reach out to our team with your suggestions
+                </p>
+            </div>
+            <div class="slider">
+                <img src="/img/camp1.png" alt="" id="slider" />
+            </div>
         </div>
-      </div>
+        <!-- ------------------------------------ -->
     </div>
-  </nav>
-    <!-- ------------------------------------ -->
 
-        <!-- ------------------------------------ -->
-        <! need to delete about.js>
-        <!-- ------------------------------------ -->
- <p>hello my name is Anurag</p>
- <p>i am from nit jsr </p>
- i live in ranchi
-
-   
+    <script src="/js/about.js"></script>
     <footer>
         <div class="content">
             <div class="top">
                 <div class="logo-details">
                     <i class="fas fa-fire-alt" style="color: #e85d04;"></i>
-                    <span class="logo_name">HopeHouse</span>
+                    <span class="logo_name">YelpCamp</span>
                 </div>
                 <div class="media-icons">
                     <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -98,23 +97,23 @@
                 </ul>
                 <ul class="box">
                     <li class="link_name">Top Categories</li>
-                    <li><a href="/c/61554bfe801949ad7b9be4ff">Tent Camping</a></li>
-                    <li><a href="/c/61554c2753bcf306407cb1bd">RV and Van Camping</a></li>
-                    <li><a href="/c/61554c43d2a6b15f764aff36">Canoe Camping</a></li>
-                    <li><a href="c/61554c63dfd6a37d71449b5c">Survivalist camping</a></li>
+                    <li><a href="/c/61554bfe801949ad7b9be4ff">Men</a></li>
+                    <li><a href="/c/61554c2753bcf306407cb1bd">Women</a></li>
+                    <li><a href="/c/61554c43d2a6b15f764aff36">Animal</a></li>
+                    <li><a href="c/61554c63dfd6a37d71449b5c">Children</a></li>
                 </ul>
                 <ul class="box input-box">
-                    <li class="link_name">About HopeHouse</li>
+                    <li class="link_name">About Hopehouse</li>
                     <li style="color: white;">
-                        HopeHouse is a website where users can create and review campground.In order to review or create
-                        a campground, you must have an account.
+                       HopeHouse is a website where users can say homes they offer for the needy .In order to review or saying about HopeHouse
+                        , you must have an account.
                     </li>
                 </ul>
             </div>
         </div>
         <div class="bottom-details">
             <div class="bottom_text">
-                <span class="copyright_text">© 2023 <a href="/">HopeHouse</a>All rights reserved</span>
+                <span class="copyright_text">Copyright © 2023 <a href="/">HopeHouse</a>All rights reserved</span>
                 <span class="policy_terms">
                     <a href="#">Privacy policy</a>
                     <a href="#">Terms & condition</a>
