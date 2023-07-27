@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -12,4 +12,115 @@
   <h1>hello  melu===><%= campground.author.email %></h1>
    
 </body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Page</title>
+  <!-- Add Bootstrap CSS link -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    /* Custom styles go here */
+    /* Adjust the styles according to your preferences */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+      margin-top: 30px;
+      /* Add more spacing from the top */
+    }
+
+    .user-info {
+      padding: 20px;
+      margin-bottom: 20px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+
+    .apartment-card {
+      margin-bottom: 20px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+
+    .apartment-card img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 5px 5px 0 0;
+      /* Add border radius only to the top corners */
+    }
+
+    .apartment-card .card-body {
+      padding: 10px;
+    }
+
+    @media (max-width: 768px) {
+
+      /* Stack user info on top for small screens */
+      .user-info {
+        margin-bottom: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 order-md-first">
+        <!-- 'order-md-first' will place the info section on the left for large screens -->
+        <div class="user-info">
+          <h2>User Information</h2>
+          <p><strong>Name:</strong> <%= campground.author.username %></p>
+          <p><strong>Email:</strong> <%= campground.author.email %></p>
+          <p><strong>Phone:</strong> <%= campground.contact %></p>
+          <p><strong>Rating:</strong> 4.8</p>
+          <h3>Messengers</h3>
+          <ul>
+            <li>WhatsApp: +1 123-456-7890</li>
+            <li>Telegram: @johndoe</li>
+          </ul>
+          <h3>Social Media</h3>
+          <ul>
+            <li><a href="https://www.facebook.com/johndoe" target="_blank">Facebook</a></li>
+            <li><a href="https://www.twitter.com/johndoe" target="_blank">Twitter</a></li>
+            <li><a href="https://www.instagram.com/johndoe" target="_blank">Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <h2>Apartments</h2>
+        <div class="apartment-card">
+          <div class="card">
+            <img class="card-img-top" src="apartment1.jpg" alt="Apartment 1">
+            <div class="card-body">
+              <h5 class="card-title">Apartment 1</h5>
+              <p class="card-text">Description of Apartment 1 goes here.</p>
+            </div>
+          </div>
+        </div>
+        <div class="apartment-card">
+          <div class="card">
+            <img class="card-img-top" src="apartment2.jpg" alt="Apartment 2">
+            <div class="card-body">
+              <h5 class="card-title">Apartment 2</h5>
+              <p class="card-text">Description of Apartment 2 goes here.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Add more apartment cards as needed -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Add Bootstrap JS and Popper.js (required for some Bootstrap components) -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
 </html>
